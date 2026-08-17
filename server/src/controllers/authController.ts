@@ -89,5 +89,14 @@ const logout = async (req: Request, res: Response) => {
     return res.status(200).json({ status: "success", data: "Logged out" });
 };
 
+const whoAmI = async (req: Request, res : Response) => {
+    return res.status(200).json({
+        status : "success",
+        data: {
+            user :req.user
+        }
+    })
+}
 
-export { register, login, logout }
+
+export { register, login, logout, whoAmI }

@@ -209,7 +209,7 @@ export const getExerciseFromWorkout = async (req: Request, res: Response) => {
 
 export const updateExerciseToWorkout = async (req: Request, res: Response) => {
     try {
-        const { name, sets, reps, weight, isKg, notes } = req.body;
+        const { name, sets    , reps, weight, isKg, notes } = req.body;
 
         if (!req.user) {
             return res.status(400).json({ status: "error", data: "Not Authenticated" });
