@@ -1,32 +1,25 @@
-# React + TypeScript + Vite
+# Exercise-tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is a full stack project of mine
 
-Currently, two official plugins are available:
+The goal of the program is to track weightroom workouts 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The tech stack is react and typescript
 
-## React Compiler
+I am also using the prisma orm, jwt tokens, and zod for validation. Frontend libaries are tbd but most likeley recharts and router will be the only 2 I can see needing currently. I used vite as the bundler and I am using neon db to host the postgressSQL database. 
+Motivation is the current tracker I use doesnt let you freely track progression in a way that is easy to see (charts are not free).  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Need to do checklist
+- Frontend Login Page
+- Frontend UserPage
+- Frontend Exercise progression page
+- Frontend API handler
+- Deployment (unsure of what I will be using to do so)
 
-## Expanding the Oxlint configuration
+## Completed
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- Backend Routes
+- Backend Validation
+- Backend Authentication
+- Backend Controllers
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.

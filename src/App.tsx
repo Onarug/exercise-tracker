@@ -1,11 +1,12 @@
-import { useState } from 'react'
-
+import { LoginPage } from "./pages/loginPage"
 
 function App() {
 
   return (
-    <div>Hello</div>
-      )
+
+    <LoginPage></LoginPage>
+
+      );
 }
 
 export default App
