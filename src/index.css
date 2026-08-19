@@ -1,0 +1,53 @@
+/* index.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+input, button {
+  font: inherit;
+}
+.login-container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0a0a0a;
+    border: 5px solid #FFD700;
+    color: #FFD700;
+}
+
+.login-container form,
+.login-container .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+.login-label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-input {
+    background-color: #111111;
+    border: 1px solid #FFD700;
+    color: #FFD700;
+}
+
+.login-input::placeholder {
+    color: #7a6a1f;
+}
+
