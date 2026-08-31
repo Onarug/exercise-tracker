@@ -28,3 +28,14 @@ export interface Exercise {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface AuthResponse {
+    user: User;
+    token: string;
+}
+
+export interface RegisterResponse {
+    id: string;
+    name: string;
+    email: string;
+}

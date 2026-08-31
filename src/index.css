@@ -16,6 +16,15 @@ body {
 input, button {
   font: inherit;
 }
+.home-page{
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;   
+}
+.login-header {
+    text-align: center;
+    color :#FFD700;
+}
 .login-container {
     max-width: 1200px;
     width: 90%;
@@ -24,13 +33,14 @@ input, button {
     background-color: #0a0a0a;
     border: 5px solid #FFD700;
     color: #FFD700;
+     text-align: center;
 }
 
 .login-container form,
 .login-container .field-group {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 25px;
     max-width: 400px;
     margin: 20px auto 0;
 }
@@ -50,4 +60,10 @@ input, button {
 .login-input::placeholder {
     color: #7a6a1f;
 }
-
+.login-button {
+    background-color: #111111;
+    color: #FFD700;
+    border-color: #FFD700;
+    border: 1px solid;
+    
+}

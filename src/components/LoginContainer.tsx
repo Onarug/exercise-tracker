@@ -1,7 +1,7 @@
 export const LoginContainer = () => {
     return (
         <div className="login-container">
-            <h1>Login in here</h1>
+            <h1>Login here</h1>
             <div className="field-group">
                 <label className="login-label">
                     Email
@@ -11,6 +11,7 @@ export const LoginContainer = () => {
                     Password
                     <input className="login-input" type="password" placeholder="••••••••" />
                 </label>
+                <button className="login-button"> Submit</button>
             </div>
         </div>
     );
