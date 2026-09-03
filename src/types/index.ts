@@ -46,3 +46,13 @@ export interface StatsResponse {
   totalWeightKg: number,
   totalWeightLb: number
 }
+
+export interface AllWorkouts {
+  id :string,
+  createdBy: string,
+  name: string,
+  description : string | null,
+  date : string,
+  createdAt : string,
+  updatedAt : string
+}
