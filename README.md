@@ -10,14 +10,14 @@ I am also using the prisma orm, jwt tokens, and zod for validation. Frontend lib
 Motivation is the current tracker I use doesnt let you freely track progression in a way that is easy to see (charts are not free).  
 
 ## Need to do checklist
-- Frontend Login Page
+- More inspired ui
+- Better UX for login contianer (error display)
 - Frontend UserPage
 - Frontend Exercise progression page
 - Frontend API handler
 - Deployment (unsure of what I will be using to do so)
 
 ## Completed
-
 - Backend Routes
 - Backend Validation
 - Backend Authentication
