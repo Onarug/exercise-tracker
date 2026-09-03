@@ -18,6 +18,7 @@ Motivation is the current tracker I use doesnt let you freely track progression 
 - Deployment (unsure of what I will be using to do so)
 
 ## Completed
+- Statistics Displayed
 - Backend Routes
 - Backend Validation
 - Backend Authentication
