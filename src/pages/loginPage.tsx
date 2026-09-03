@@ -1,6 +1,8 @@
 import { LoginContainer } from "../components/LoginContainer";
 import { RegisterContainer } from "../components/RegisterContainer";
 import { useState } from "react";
+  
+// Make the submitssions on each contianer a bit nicer better ux need to learn more
 
 export const LoginPage = () => {
   const [loginState, setLoginState] = useState(false);

@@ -1,7 +1,8 @@
-
+import { UserHeader } from "../components/UserHeader";
 
 export const UserPage = () => {
+    
 
-    return (<div> This is the user page </div>);
+    return (<div> <UserHeader /> </div>);
     
 }

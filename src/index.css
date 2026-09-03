@@ -67,3 +67,20 @@ input, button {
     border: 1px solid;
     
 }
+.login-button:hover {
+  background-color: #792087;
+}
+
+.user-page-container {
+  display: flex;        
+  flex-direction: row;  
+  gap: 20px;  
+  align-self: center;
+  justify-content: center;          
+}
+
+.user-page-header-text {
+    color:#FFD700;
+    text-align: center;
+
+}
