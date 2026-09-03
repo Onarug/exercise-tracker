@@ -11,7 +11,7 @@ Motivation is the current tracker I use doesnt let you freely track progression 
 
 ## Need to do checklist
 - More inspired ui
-- Better UX for login contianer (error display)
+- Better UX for login container (error display)
 - Frontend UserPage
 - Frontend Exercise progression page
 - Frontend API handler
