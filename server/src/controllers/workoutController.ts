@@ -276,3 +276,83 @@ export const deleteUserExerciseById = async (req: Request, res: Response) => {
         return res.status(500).json({ status: "error", data: "Error deleting exercise" });
     }
 };
+
+
+export const getWorkoutStats = async (req: Request, res: Response) => {
+    try {
+        if (!req.user) {
+            return res.status(400).json({ status: "error", data: "Not Authenticated" });
+        }
+
+        const lastworkout = await prisma.workout.findFirst({
+            where: {
+                createdBy: req.user.id,
+            },
+            orderBy: {
+                date: 'desc',
+            },
+        });    
+
+        if (!lastworkout) {
+            return res.status(400).json({ 
+                status: "error", 
+                data: "Error fetching latest workout"
+            });
+        }
+
+        const lastName = lastworkout.name
+        
+        const totalWorkouts = await prisma.workout.count({
+            where:{
+                createdBy: req.user.id
+            }
+        })
+
+        const exercises = await prisma.exercise.findMany({
+            where: {
+                workout: {
+                    createdBy: req.user.id,
+                },
+            },
+            select: {
+                sets: true,
+                reps: true,
+                weight: true,
+                isKg: true,
+            },
+        });
+
+        let sumKg = 0
+        let sumLb = 0
+
+        for (const exercise of exercises) {
+            if (!exercise.weight || !exercise.reps || !exercise.sets) {
+                continue
+            }
+
+            if (exercise.isKg) {
+                sumKg += exercise.weight * exercise.sets * exercise.reps
+                sumLb += exercise.weight * 2.20462 * exercise.sets * exercise.reps
+            } else {
+                sumKg += exercise.weight * 0.453592 * exercise.sets * exercise.reps
+                sumLb += exercise.weight * exercise.sets * exercise.reps
+            }
+        }
+
+        return res.status(200).json({ 
+            status: "success", 
+            data: {
+                lastName,
+                totalWorkouts,
+                totalWeightKg: Math.round(sumKg * 100) / 100, 
+                totalWeightLb: Math.round(sumLb * 100) / 100, 
+            } 
+        });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ 
+            status: "error", 
+            data: "Error getting workout stats" 
+        });
+    }
+};

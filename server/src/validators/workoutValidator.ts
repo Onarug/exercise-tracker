@@ -11,6 +11,6 @@ export const touchExerciseSchema = z.object({
     reps : z.int().min(0, "No negative weights exist"),
     weight : z.int().max(1000, "You did not move that").min(0,"no negative weights"),
     isKg : z.boolean(),
-    notes : z.object()
+    notes : z.string().optional()
 })
 

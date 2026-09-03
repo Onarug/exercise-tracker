@@ -84,3 +84,27 @@ input, button {
     text-align: center;
 
 }
+.stat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 10px;
+}
+
+.stat-box h1 {
+  font-size: 2rem;
+  color:#FFD700;
+  margin: 0 0 5px 0;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  color: #FFD700;
+  margin: 0;
+}

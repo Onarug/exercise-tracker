@@ -9,7 +9,8 @@ import
     addExerciseToWorkout,
     getExerciseFromWorkout,
     updateExerciseToWorkout,
-    deleteUserExerciseById } from "../controllers/workoutController.js";
+    deleteUserExerciseById,
+    getWorkoutStats } from "../controllers/workoutController.js";
 import { validateRequest } from "../middleware/validationMiddleware.js";
 import { touchExerciseSchema,touchWorkoutSchema } from "../validators/workoutValidator.js";
 
@@ -21,9 +22,11 @@ router.use(authMiddleware)
 
 router.post("/",validateRequest(touchWorkoutSchema),addWorkoutToDb);
 router.get("/",getAllUserWorkouts);
+router.get("/stats",getWorkoutStats)
 router.get("/:workoutId",getUserWorkoutById);
 router.patch("/:workoutId",validateRequest(touchWorkoutSchema),updateUserWorkoutById);
 router.delete("/:workoutId",deleteUserWorkoutById);
+
 
 // Exercise Specfic
 router.post("/:workoutId/exercise",validateRequest(touchExerciseSchema),addExerciseToWorkout);

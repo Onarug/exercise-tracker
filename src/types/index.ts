@@ -39,3 +39,10 @@ export interface RegisterResponse {
     name: string;
     email: string;
 }
+
+export interface StatsResponse {
+  lastName : string,
+  totalWorkouts : number,
+  totalWeightKg: number,
+  totalWeightLb: number
+}
