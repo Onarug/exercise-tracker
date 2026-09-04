@@ -111,6 +111,7 @@ input, button {
 }
 
 
+
 .workout-list {
   display: flex;
   flex-direction: column;
@@ -121,7 +122,8 @@ input, button {
   background: #111111;
   border-radius: 0;
   padding: 1.5rem;
-  
+  width: 50%;
+  margin: 0 auto; 
   border: 1px solid #f4d35e;
 }
 
@@ -148,4 +150,20 @@ input, button {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
+}
+.add-workout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #f4d35e; 
+  width: 50%;
+  margin: 0 auto; 
+}
+.add-workout-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto; 
 }

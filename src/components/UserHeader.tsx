@@ -4,10 +4,12 @@ import { getStats } from "../api/user";
 import type { StatsResponse } from "../types";
 import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
+import { NewWorkoutContainer } from "./NewWorkoutContainer";
 
 export const UserHeader = () => {
   const { user } = useAuth();
   const [stats, setStats] = useState<StatsResponse | null>(null);
+  const [newWorkout, setNewWorkout] = useState(false)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -57,10 +59,10 @@ export const UserHeader = () => {
         <div>
           <button
             className="login-button"
-            onClick={() => console.log("Add workout btn")}
+            onClick={() => setNewWorkout(!newWorkout)}
           >
     
-            Add workout
+            {!newWorkout ? "Add Workout"   : "Close" }
           </button>
         </div>
         <div>
@@ -70,6 +72,7 @@ export const UserHeader = () => {
           </button>
         </div>
       </div>
+      {newWorkout ? <NewWorkoutContainer /> : <div></div>}
     </div>
   );
 };

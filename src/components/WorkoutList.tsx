@@ -1,9 +1,11 @@
 import type { AllWorkouts } from "../types"
 import { getUserWorkouts } from "../api/user"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router"
 
 export const WorkoutList = () => {
     const [workouts, setWorkouts] = useState<AllWorkouts[]>([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,6 +21,7 @@ export const WorkoutList = () => {
 
     
      return  (
+        <div className="workout-list-wrapper">
      <div className="workout-list">
         <ul>
       {workouts.map((w) => (
@@ -32,9 +35,12 @@ export const WorkoutList = () => {
             </div>
             
             <span className="workout-desc" >{w.description}</span> 
+            <button onClick={() => navigate(`/workout/${w.id}`)}> View</button>
             </div>
+            
         </li>
       ))}
     </ul>
+     </div>
      </div>)
 }
