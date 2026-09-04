@@ -64,7 +64,7 @@ input, button {
     color: #f4d35e;
     border-color: #f4d35e;
     border: 1px solid;
-    
+    padding: 2px 10px;
 }
 .login-button:hover {
   background-color: #792087;
@@ -115,7 +115,7 @@ input, button {
 .workout-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 10px;
 }
 
 .workout-item {
@@ -151,6 +151,10 @@ input, button {
   font-size: 1.2rem;
   font-weight: 600;
 }
+.workout-btn{
+  margin-left: auto;
+  display: block;
+}
 .add-workout{
   display: flex;
   align-items: center;
@@ -166,4 +170,47 @@ input, button {
   justify-content: center;
   width: 50%;
   margin: 0 auto; 
+}
+
+.workout-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid  #f4d35e 2px;
+  border-radius: 10px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+.workout-header h1{
+  color :#f4d35e
+}
+.workout-header p{
+  color :#f4d35e
+}
+
+.exercise-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+
+gap: 10px;
+}
+
+.exercise-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border: solid #f4d35e 1px;
+
+}
+
+.exercise-stat-box{
+  color:#f4d35e;
+  align-items: center;
+   padding: 4px 10px;
 }

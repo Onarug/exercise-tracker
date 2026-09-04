@@ -11,7 +11,8 @@ export const WorkoutList = () => {
         const fetchData = async () => {
             try {
                 const data = await getUserWorkouts();
-                setWorkouts(data)
+                //setWorkouts(data) save both states at some point
+                setWorkouts(data.reverse())
             }catch (err){
                 console.error(err)
             }
@@ -23,7 +24,7 @@ export const WorkoutList = () => {
      return  (
         <div className="workout-list-wrapper">
      <div className="workout-list">
-        <ul>
+        <ul className="workout-list">
       {workouts.map((w) => (
         <li key={w.id}>
           <div className="workout-item">
@@ -35,7 +36,7 @@ export const WorkoutList = () => {
             </div>
             
             <span className="workout-desc" >{w.description}</span> 
-            <button onClick={() => navigate(`/workout/${w.id}`)}> View</button>
+            <span className="workout-btn"><button className="login-button"onClick={() => navigate(`/workout/${w.id}`)}> View</button></span>
             </div>
             
         </li>

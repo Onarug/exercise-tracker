@@ -40,18 +40,18 @@ export const UserHeader = () => {
       <div className="stat-container">
         <div className="stat-box">
           
-          <h1>Total Workouts: </h1> 
-          <p>{stats?.totalWorkouts}</p>
+          <h3>Total Workouts: </h3> 
+          <p>{stats? stats.totalWorkouts : 0}</p>
         </div>
         <div className="stat-box">
           
-          <h1> Last Workout: </h1>
-          <p>{stats?.lastName}</p>
+          <h3> Last Workout: </h3>
+          <p>{stats? stats.lastName : "N/a"}</p>
         </div>
         <div className="stat-box">
          
-          <h1>Total Weight Moved:</h1>
-          <p> {stats?.totalWeightLb} Lbs</p>
+          <h3>Total Weight Moved:</h3>
+          <p> {stats? stats.totalWeightLb : 0} Lbs</p>
         </div>
       </div>
 

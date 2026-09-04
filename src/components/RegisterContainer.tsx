@@ -9,19 +9,19 @@ export const RegisterContainer = () => {
 
   const RegisterSubmit = async () => {
     try {
-        await register(name,email,password);
-        console.log("Success")
-        setStatus(`Successfully registerd ${name} \n Please log in now`)
-        setEmail("")
-        setName("")
-        setPassword("")
-    } catch (err){
-        console.error(err)
-        setStatus(`Error Registering ${name} \n Please try again`)
+      await register(name, email, password);
+      console.log("Success")
+      setStatus(`Successfully registerd ${name} \n Please log in now`)
+      setEmail("")
+      setName("")
+      setPassword("")
+    } catch (err) {
+      console.error(err)
+      setStatus(`Error Registering ${name} \n Please try again`)
 
 
     }
-        
+
 
   };
 
@@ -36,16 +36,16 @@ export const RegisterContainer = () => {
             type="text"
             placeholder="you@example.com"
             value={email}
-            onChange={(e) =>setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label className="login-label">
           Username
           <input className="login-input"
-           type="text"
+            type="text"
             placeholder="username"
             value={name}
-            onChange={(e) =>setName(e.target.value)} />
+            onChange={(e) => setName(e.target.value)} />
         </label>
         <label className="login-label">
           Password
@@ -54,7 +54,7 @@ export const RegisterContainer = () => {
             type="password"
             placeholder="••••••••"
             value={password}
-            onChange={(e) =>setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <button className="login-button" onClick={RegisterSubmit}> Submit</button>
