@@ -51,7 +51,10 @@ export const ExerciseList = () => {
     }, [addNewExercise])
     return (
         <div >
-            <button className="login-button" onClick={() => setAdding(!adding)}> {!adding ? "Add Exercise" : "Close" }</button>
+            <div className="exercise-btn-container">   
+            <button className="exercise-button" onClick={() => setAdding(!adding)}> {!adding ? "Add Exercise" : "Close" }</button>
+
+            </div>
             {adding ?  
                <div>
                 
@@ -106,8 +109,8 @@ export const ExerciseList = () => {
                                 }}
                             />
                         </label>
-                        <div>
-                            <button onClick={addNewExercise}>Add</button>
+                        <div className="exercise-btn-container">
+                            <button className="exercise-button" onClick={addNewExercise}>Add</button>
                         </div>
                     </div>
                 </div>

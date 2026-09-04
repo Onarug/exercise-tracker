@@ -261,3 +261,23 @@ input, button {
   align-items: center;
   padding: 4px 10px;
 }
+
+.exercise-btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+}
+
+.exercise-button {
+    background-color: #111111;
+    color: #f4d35e;
+    border-color: #f4d35e;
+    border: 1px solid;
+    padding: 6px 14px;
+    text-transform: uppercase;
+    align-items: center;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease, background-color 0.15s ease;
+}

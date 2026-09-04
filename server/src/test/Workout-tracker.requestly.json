@@ -1,0 +1,643 @@
+{
+  "meta": {
+    "version": "1.1.0",
+    "exportedAt": "2026-09-04T21:49:43.025Z",
+    "exportedUsing": "Requestly API Client"
+  },
+  "records": [
+    {
+      "id": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "name": "Workout-tracker",
+      "description": "",
+      "type": "collection",
+      "parentId": null,
+      "deleted": false,
+      "data": {
+        "variables": {
+          "BaseUrl": {
+            "id": "57102146-5f8f-4daa-9e23-408e0210e2ed",
+            "syncValue": "http://localhost:5001",
+            "type": "string",
+            "isEnabled": true,
+            "rank": "hmsq8r21w",
+            "createdAt": "2026-08-12T15:28:14.075Z",
+            "updatedAt": "2026-08-12T15:28:14.075Z",
+            "createdBy": "3ea38078-a210-489e-856c-4b7ba94f3f18",
+            "updatedBy": "3ea38078-a210-489e-856c-4b7ba94f3f18",
+            "localValue": "",
+            "isPersisted": true
+          }
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a1"
+    },
+    {
+      "id": "1a928566-2ccc-477d-b713-0ee07fdb40b9",
+      "name": "Get Me",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/me",
+          "method": "GET",
+          "headers": [
+            {
+              "id": 1786998406673214,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzMjk5ZDcxLWMwYmUtNDgyYy05MDUzLTI2OWVjNjQ5ZmNiNyIsImlhdCI6MTc4NjU2MTQzNSwiZXhwIjoxNzg3MTY2MjM1fQ.gI_vJi1moO4O591yNqy0sxpO5CkQEezcthlZMdl1xEc",
+              "isEnabled": true,
+              "description": "",
+              "dataType": "string"
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  email : \"a@gmail.com\",\n  password : \"password\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a3"
+    },
+    {
+      "id": "4d2cabca-5f2e-4c46-a985-47ab08178414",
+      "name": "Edit Exercise",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/8b7280ee-c30d-4410-8efb-f6e510118540/exercise/5b66d9ef-344d-4c7a-b370-07ee6e55456b",
+          "method": "PATCH",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzMjk5ZDcxLWMwYmUtNDgyYy05MDUzLTI2OWVjNjQ5ZmNiNyIsImlhdCI6MTc4NjU2MTQzNSwiZXhwIjoxNzg3MTY2MjM1fQ.gI_vJi1moO4O591yNqy0sxpO5CkQEezcthlZMdl1xEc",
+              "isEnabled": true,
+              "description": "",
+              "dataType": "string"
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n   name : \"curls changed\",\n  sets : 3,\n  reps : 8,\n  weight : 30,\n  isKg: false,\n  notes : \"hard\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    },
+    {
+      "id": "0e048557-c922-4317-a506-e06625babffb",
+      "name": "Get Exercises from workout",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/8b7280ee-c30d-4410-8efb-f6e510118540/exercise",
+          "method": "GET",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzMjk5ZDcxLWMwYmUtNDgyYy05MDUzLTI2OWVjNjQ5ZmNiNyIsImlhdCI6MTc4NjU2MTQzNSwiZXhwIjoxNzg3MTY2MjM1fQ.gI_vJi1moO4O591yNqy0sxpO5CkQEezcthlZMdl1xEc",
+              "isEnabled": true,
+              "description": "",
+              "dataType": "string"
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    },
+    {
+      "id": "52f449b9-a273-4b34-a8f8-1d4513bd3f56",
+      "name": "Add an exercise",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/85572d2e-e765-459d-b234-e741c8a09dd4/exercise",
+          "method": "POST",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI3Y2VjY2YwLTVkY2YtNDFmYy1hMTI5LWYzZTBkMjM2YzY0ZiIsImlhdCI6MTc4ODQ1MDc1MCwiZXhwIjoxNzg5MDU1NTUwfQ.jDELgalkTBQ1UepmackMB1aD8Zu90PeJ_o_fPVk9ono",
+              "dataType": "string",
+              "isEnabled": true,
+              "description": ""
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  name : \"Overhead Tricpet Extension\",\n  sets : 3,\n  reps : 8,\n  weight : 37,\n  isKg: false,\n  notes : \"fine\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    },
+    {
+      "id": "4e621999-6e72-47fe-a8d1-6154a63907d0",
+      "name": "Delete a Workout",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/f9726419-f837-43aa-b82a-f9038a8abf36",
+          "method": "DELETE",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzMjk5ZDcxLWMwYmUtNDgyYy05MDUzLTI2OWVjNjQ5ZmNiNyIsImlhdCI6MTc4NjU2MTQzNSwiZXhwIjoxNzg3MTY2MjM1fQ.gI_vJi1moO4O591yNqy0sxpO5CkQEezcthlZMdl1xEc",
+              "isEnabled": true,
+              "description": "",
+              "dataType": "string"
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    },
+    {
+      "id": "9e610ad1-4845-4a9e-8837-712e843fc3ee",
+      "name": "Update a workout",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/d6653a0a-e733-49e9-ae59-8db6d19be7ea",
+          "method": "PATCH",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzMjk5ZDcxLWMwYmUtNDgyYy05MDUzLTI2OWVjNjQ5ZmNiNyIsImlhdCI6MTc4NjU2MTQzNSwiZXhwIjoxNzg3MTY2MjM1fQ.gI_vJi1moO4O591yNqy0sxpO5CkQEezcthlZMdl1xEc",
+              "isEnabled": true,
+              "description": "",
+              "dataType": "string"
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  name : \"arm day\",\n  description : \"The real leg day\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    },
+    {
+      "id": "ffc024ee-8e85-4018-aa6a-26f75eda1f01",
+      "name": "Get a unique workout",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/d6653a0a-e733-49e9-ae59-8db6d19be7ea",
+          "method": "GET",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzMjk5ZDcxLWMwYmUtNDgyYy05MDUzLTI2OWVjNjQ5ZmNiNyIsImlhdCI6MTc4NjU2MTQzNSwiZXhwIjoxNzg3MTY2MjM1fQ.gI_vJi1moO4O591yNqy0sxpO5CkQEezcthlZMdl1xEc",
+              "isEnabled": true,
+              "description": "",
+              "dataType": "string"
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    },
+    {
+      "id": "a4217016-3f37-4dff-8831-643a724b0449",
+      "name": "Get a users workout list",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/",
+          "method": "GET",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI3Y2VjY2YwLTVkY2YtNDFmYy1hMTI5LWYzZTBkMjM2YzY0ZiIsImlhdCI6MTc4ODQ1MDc1MCwiZXhwIjoxNzg5MDU1NTUwfQ.jDELgalkTBQ1UepmackMB1aD8Zu90PeJ_o_fPVk9ono",
+              "dataType": "string",
+              "isEnabled": true,
+              "description": ""
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    },
+    {
+      "id": "2e7d7c0f-c808-44f3-a2f2-b9ee931a4153",
+      "name": "Add Empty Workout",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/",
+          "method": "POST",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI3Y2VjY2YwLTVkY2YtNDFmYy1hMTI5LWYzZTBkMjM2YzY0ZiIsImlhdCI6MTc4ODQ1MDc1MCwiZXhwIjoxNzg5MDU1NTUwfQ.jDELgalkTBQ1UepmackMB1aD8Zu90PeJ_o_fPVk9ono",
+              "dataType": "string",
+              "isEnabled": true,
+              "description": ""
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  name : \"Pushday\",\n  description : \"Chest and tris\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    },
+    {
+      "id": "d1d1bf71-1be6-4a3d-9e76-57cea3ac6e83",
+      "name": "Logout Success",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/logout",
+          "method": "POST",
+          "headers": [
+            {
+              "id": 1786551900298090,
+              "key": "authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzMjk5ZDcxLWMwYmUtNDgyYy05MDUzLTI2OWVjNjQ5ZmNiNyIsImlhdCI6MTc4NjU1MTg5MCwiZXhwIjoxNzg3MTU2NjkwfQ.BPGIfGvznNj9_IWP7XbEemvlA8DqXK5g813h2W4r7mc",
+              "isEnabled": true,
+              "description": "",
+              "dataType": "string"
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  password : \"password111\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a3"
+    },
+    {
+      "id": "7bda6a6d-c108-43f2-9e8c-a4747f9855e7",
+      "name": "Login Failure",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/login",
+          "method": "POST",
+          "headers": [],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  password : \"password111\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a3"
+    },
+    {
+      "id": "f1f89f3a-4602-4116-a079-c2c43e243a44",
+      "name": "Login Failure password is wrong",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/login",
+          "method": "POST",
+          "headers": [],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  email : \"test@gmail.com\",\n  password : \"password111\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a3"
+    },
+    {
+      "id": "54ed8b7e-4483-4432-8b67-cccf4af727fd",
+      "name": "Login Failure No Email",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/login",
+          "method": "POST",
+          "headers": [],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  email : \"doesnotexists@gmail.com\",\n  password : \"password\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a3"
+    },
+    {
+      "id": "fd8a0aad-ffc7-4953-b246-d5b47ca33fa1",
+      "name": "Login User Success",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/login",
+          "method": "POST",
+          "headers": [],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  email : \"a@gmail.com\",\n  password : \"password\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a3"
+    },
+    {
+      "id": "581fc8be-738e-4153-9810-b81a65997be4",
+      "name": "Register Failure",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/register",
+          "method": "POST",
+          "headers": [],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  name :3\n  \n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a2"
+    },
+    {
+      "id": "851cc6d4-7b50-47a5-ab2f-ec50ec0eef49",
+      "name": "Register User Duplicate",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/register",
+          "method": "POST",
+          "headers": [],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  name: \"Test2\",\n  email: \"test@gmail.com\",\n  password: \"password\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a1"
+    },
+    {
+      "id": "330d14c8-7e42-4e1d-9fcc-81c7a47095d6",
+      "name": "Register User Success",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/auth/register",
+          "method": "POST",
+          "headers": [],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "{\n  name: \"Anuraag\",\n  email: \"a@gmail.com\",\n  password: \"password\"\n}",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a0"
+    },
+    {
+      "id": "91b0a314-3215-42e9-9b05-ae84f5abaebd",
+      "name": "Get Workout stats",
+      "description": "",
+      "type": "api",
+      "parentId": "b69c0c48-4cfb-4099-b09a-cedb51564712",
+      "deleted": false,
+      "data": {
+        "type": "http",
+        "request": {
+          "url": "{{BaseUrl}}/workout/stats",
+          "method": "GET",
+          "headers": [
+            {
+              "id": 1786561071414110,
+              "key": "authorization",
+              "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI3Y2VjY2YwLTVkY2YtNDFmYy1hMTI5LWYzZTBkMjM2YzY0ZiIsImlhdCI6MTc4ODQ1MDc1MCwiZXhwIjoxNzg5MDU1NTUwfQ.jDELgalkTBQ1UepmackMB1aD8Zu90PeJ_o_fPVk9ono",
+              "isEnabled": true,
+              "description": "",
+              "dataType": "string"
+            }
+          ],
+          "queryParams": [],
+          "pathVariables": [],
+          "body": {
+            "contentType": "raw",
+            "raw": "",
+            "rawContentType": "application/json"
+          },
+          "contentType": "none"
+        },
+        "auth": {
+          "type": "inherit"
+        }
+      },
+      "rank": "a8"
+    }
+  ],
+  "environments": [],
+  "packages": []
+}
