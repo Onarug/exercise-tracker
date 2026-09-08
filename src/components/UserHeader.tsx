@@ -71,8 +71,11 @@ export const UserHeader = () => {
             Logout
           </button>
         </div>
-      </div>
+      </div >
+      <div className="workout-page">
       {newWorkout ? <NewWorkoutContainer /> : <div></div>}
+      </div>
+      
     </div>
   );
 };

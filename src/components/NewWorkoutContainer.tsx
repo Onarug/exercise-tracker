@@ -22,23 +22,26 @@ export const NewWorkoutContainer = () => {
 
     return (
         <div className="add-workout">
-            <div className="field-group">
-                <label className="login-label">
-                    Name
-                    <input className="login-input"
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)} />
-                </label>
-                <label className="login-label">
-                    Description
-                    <input className="login-input"
-                        type="text"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)} />
-                </label>
-                <button className="login-button" onClick={SubmitNewWorkout}> Submit</button>
+            <div className="add-workout-form">
+                <div className="field-group">
+                    <label className="login-label">
+                        Name
+                        <input className="login-input"
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)} />
+                    </label>
+                    <label className="login-label">
+                        Description
+                        <input className="login-input"
+                            type="text"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)} />
+                    </label>
+                    <button className="login-button" onClick={SubmitNewWorkout}> Submit</button>
+                </div>
             </div>
+
         </div>
     );
 };

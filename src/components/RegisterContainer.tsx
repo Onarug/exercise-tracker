@@ -6,18 +6,19 @@ export const RegisterContainer = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("")
+  const [errorMsg,setErrorMsg] = useState("")
 
   const RegisterSubmit = async () => {
     try {
       await register(name, email, password);
-      console.log("Success")
+      setErrorMsg("")
       setStatus(`Successfully registerd ${name} \n Please log in now`)
       setEmail("")
       setName("")
       setPassword("")
     } catch (err) {
       console.error(err)
-      setStatus(`Error Registering ${name} \n Please try again`)
+      setErrorMsg(`${err}`)
 
 
     }
@@ -58,7 +59,9 @@ export const RegisterContainer = () => {
           />
         </label>
         <button className="login-button" onClick={RegisterSubmit}> Submit</button>
-        <h4>{status}</h4>
+        <span className="success-message">{status === "" ? "" : status}</span>
+        <span className="error-message">{errorMsg === "" ? "" : errorMsg}</span>
+
       </div>
     </div>
   );

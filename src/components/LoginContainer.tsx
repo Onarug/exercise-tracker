@@ -6,15 +6,20 @@ export const LoginContainer = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    const { login } = useAuth()
+    const { login } = useAuth();
+    const [errorMsg,setErrorMsg] = useState("")
+    const [success,setSuccess] = useState(false)
 
     const SubmitLogin = async () => {
         try {
+            setErrorMsg("")
             const loggedInUser = await login(email, password);
+            setSuccess(true)
             navigate(`/user/${loggedInUser.id}`)
 
         } catch (err) {
             console.error(err)
+            setErrorMsg(`${err}`)
         }
     }
 
@@ -40,6 +45,10 @@ export const LoginContainer = () => {
                         onChange={(e) => setPassword(e.target.value)} />
                 </label>
                 <button className="login-button" onClick={SubmitLogin}> Submit</button>
+            </div>
+            <div>
+                <span className="success-message">{success ? "Logging In" : ""}</span>
+                <span className="error-message">{errorMsg === "" ? "" : errorMsg }</span>
             </div>
         </div>
     );
