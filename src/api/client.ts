@@ -1,6 +1,5 @@
-//Incomplete need to add url to a env file but since local not a securiyt risk
 
-const BASE_URL = "http://localhost:5001"
+const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 if (!BASE_URL){
     throw new Error("Cound not get Base Url")
