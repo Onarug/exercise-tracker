@@ -23,3 +23,10 @@ export function deleteWorkout(id : string){
         }
     )
 }
+
+// "/:workoutId/exercise/:id"
+export function deleteExercise(workoutid: string, exerciseid : string){
+    return request<string>(`/workout/${workoutid}/exercise/${exerciseid}`,
+        { method : "DELETE"}
+    )
+}

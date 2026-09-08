@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { getWorkout } from "../api/workout";
 import { useParams } from "react-router";
-import { addExercise } from "../api/workout";
+import { addExercise,deleteExercise } from "../api/workout";
 import type { Exercise } from "../types";
 
 
@@ -30,7 +30,16 @@ export const ExerciseList = () => {
             console.error(err)
         }
     }
+    const deleteExerciseBtn = async (exerciseId : string) => {
+        if(!id){
+            return <div> Error Deleteing exercise</div>
+        }
+        try {
+            await deleteExercise(id,exerciseId)
+        } catch (err){
 
+        }
+    }
     const getWorkoutInfo = async () => {
         if (!id) {
             return <div> Error Getting workout</div>
@@ -48,7 +57,7 @@ export const ExerciseList = () => {
     }
     useEffect(() => {
         getWorkoutInfo()
-    }, [addNewExercise])
+    }, [addNewExercise,deleteExerciseBtn])
     return (
         <div >
             <div className="exercise-btn-container">   
@@ -135,6 +144,7 @@ export const ExerciseList = () => {
                             Weight
                             <div> {exercise.weight}</div>
                         </div>
+                        <button className="login-button" onClick={() => deleteExerciseBtn(exercise.id)}> Delete</button>
                     </div>
                 </li>))}
             </ul>
