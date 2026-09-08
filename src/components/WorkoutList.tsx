@@ -36,6 +36,7 @@ export const WorkoutList = () => {
             </div>
             
             <span className="workout-desc" >{w.description}</span> 
+            <div className="workout-container"></div> 
             <span className="workout-btn"><button className="login-button"onClick={() => navigate(`/workout/${w.id}`)}> View</button></span>
             </div>
             

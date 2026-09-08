@@ -40,23 +40,23 @@ export const UserHeader = () => {
       <div className="stat-container">
         <div className="stat-box">
           
-          <h3>Total Workouts: </h3> 
+          <h3 className="user-page-header-text">Total Workouts: </h3> 
           <p>{stats? stats.totalWorkouts : 0}</p>
         </div>
         <div className="stat-box">
           
-          <h3> Last Workout: </h3>
+          <h3 className="user-page-header-text"> Last Workout: </h3>
           <p>{stats? stats.lastName : "N/a"}</p>
         </div>
         <div className="stat-box">
          
-          <h3>Total Weight Moved:</h3>
+          <h3 className="user-page-header-text">Total Weight Moved:</h3>
           <p> {stats? stats.totalWeightLb : 0} Lbs</p>
         </div>
       </div>
 
       <div className="user-page-container">
-        <div>
+        <div className="workout-container">
           <button
             className="login-button"
             onClick={() => setNewWorkout(!newWorkout)}
@@ -65,7 +65,7 @@ export const UserHeader = () => {
             {!newWorkout ? "Add Workout"   : "Close" }
           </button>
         </div>
-        <div>
+        <div className="workout-container">
           <button className="login-button" onClick={SubmitLogout}>
             
             Logout

@@ -17,3 +17,5 @@ export function addNewWorkout (name :string, description : string) {
         body: JSON.stringify({name, description})
         })
 }
+
+

@@ -1,6 +1,6 @@
 import { useParams } from "react-router"
 import { useEffect,useState } from "react";
-import { getWorkout } from "../api/workout";
+import { getWorkout,deleteWorkout } from "../api/workout";
 import { useNavigate } from "react-router";
 
 export const WorkoutHeader = () => {
@@ -23,13 +23,28 @@ export const WorkoutHeader = () => {
 
         }
     }
+    const deleteWorkoutSubmit = async () =>{
+        if(!id){
+            return <div> Error Deleting workout</div>
+        }
+        try{
+            await deleteWorkout(id)
+            navigate(-1)
+        } catch (err){
+
+        }
+    }
     useEffect(() => {
         getWorkoutInfo()
     },[])
     return (<div className="workout-header">
         <div><h1>{name}</h1> </div> 
         <div><p>{description}</p></div>
-       <button className="login-button" onClick={() => navigate(-1)}>Back</button>
+        <div className="workout-container">
+        <button className="login-button" onClick={() => navigate(-1)}>Back</button>
+       <button className="login-button" onClick={deleteWorkoutSubmit}> Delete Workout</button>
+        </div>
+      
         </div>)
 
 }

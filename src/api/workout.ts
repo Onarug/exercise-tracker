@@ -13,4 +13,13 @@ export const addExercise = (id : string,name : string, sets : number, reps :numb
         }
     );
 
+    
+}
+export function deleteWorkout(id : string){
+    return request<string>(`/workout/${id}`,
+        {
+            method : "DELETE",
+            
+        }
+    )
 }

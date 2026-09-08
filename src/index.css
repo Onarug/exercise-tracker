@@ -7,9 +7,6 @@
 body {
   font-family: "Courier New", "Consolas", monospace;
   background-color: #000000;
-  background-image:
-    linear-gradient(rgba(244, 211, 94, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(244, 211, 94, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   color: #ffffff;
   line-height: 1.5;
@@ -280,4 +277,12 @@ input, button {
     letter-spacing: 0.1em;
     cursor: pointer;
     transition: box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.workout-container{
+  display: flex;
+  flex-direction: row;
+  padding: 14px 10px;
+  gap: 5px;
+
 }
