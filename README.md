@@ -1,17 +1,29 @@
-# Exercise-tracker
+# Exercise Tracker
 
-This is a full stack project of mine
+A full-stack workout tracker for logging and reviewing weight room workout.
 
-The goal of the program is to track weightroom workouts 
+**Live demo:** https://exercise-tracker.anuraag-karunakaran.workers.dev/
 
-The tech stack is react and typescript
+## What it does
 
-I am also using the prisma orm, jwt tokens, and zod for validation. Frontend libaries are tbd but most likeley recharts and router will be the only 2 I can see needing currently. I used vite as the bundler and I am using neon db to host the postgressSQL database. 
+Register, log in, and track workouts, record exercises, sets, and reps, and review your history over time.
 
-## Need to do checklist
+## Tech Stack
 
-- Option to ascend or descend the workout list
-- Better UX (error message, display, enter to submit capablities)
-- Create a nice way to edit workouts instead of removing and adding them
-- Deployment (unsure of what I will be using to do so)
+**Frontend**
+- React + TypeScript
+- Vite
+- Deployed on Cloudflare Workers 
 
+**Backend**
+- Express + TypeScript
+- Prisma ORM
+- JWT auth with httpOnly cookies
+- Deployed on Render
+
+**Database**
+- PostgreSQL, hosted on Neon
+
+## Architecture
+
+The frontend and backend run as two independent services and communicate over HTTPS:
