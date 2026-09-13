@@ -6,6 +6,7 @@ import { useNavigate } from "react-router"
 export const WorkoutList = () => {
     const [workouts, setWorkouts] = useState<AllWorkouts[]>([])
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,6 +14,7 @@ export const WorkoutList = () => {
                 const data = await getUserWorkouts();
                 //setWorkouts(data) save both states at some point
                 setWorkouts(data.reverse())
+                setLoading(false);
             }catch (err){
                 console.error(err)
             }
@@ -21,7 +23,8 @@ export const WorkoutList = () => {
     },[])
 
     
-     return  (
+     return  (<div>
+        {loading ? <div className="adding-message">Loading Workout Information </div>: 
         <div className="workout-list-wrapper">
      <div className="workout-list">
         <ul className="workout-list">
@@ -44,5 +47,6 @@ export const WorkoutList = () => {
       ))}
     </ul>
      </div>
+     </div>}
      </div>)
 }

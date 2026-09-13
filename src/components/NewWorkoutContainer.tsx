@@ -7,9 +7,11 @@ export const NewWorkoutContainer = () => {
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const navigate = useNavigate()
+    const [message,setMessage] = useState("")
 
     const SubmitNewWorkout = async () => {
         try {
+            setMessage("Adding ...")
             const response = await addNewWorkout(name, description)
             setName("")
             setDescription("")
@@ -17,6 +19,7 @@ export const NewWorkoutContainer = () => {
 
         } catch (err) {
             console.error(err)
+            setMessage(String(err))
         }
     }
 
@@ -39,7 +42,9 @@ export const NewWorkoutContainer = () => {
                             onChange={(e) => setDescription(e.target.value)} />
                     </label>
                     <button className="login-button" onClick={SubmitNewWorkout}> Submit</button>
+                    <div className="adding-message"><p>{message}</p></div>
                 </div>
+                
             </div>
 
         </div>

@@ -56,6 +56,7 @@ input, button {
     gap: 25px;
     max-width: 400px;
     margin: 20px auto 0;
+    gap: 10px;
 }
 
 .login-label {
@@ -305,4 +306,17 @@ input, button {
   flex-direction: column;
   gap: 5px;
   padding-bottom: 10px;
+}
+
+.adding-message{
+  color:#7a6a1f;
+  
+}
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 400px;
+    margin: 20px auto 0;
+    gap: 10px;
 }
