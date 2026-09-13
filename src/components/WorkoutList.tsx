@@ -7,6 +7,7 @@ export const WorkoutList = () => {
     const [workouts, setWorkouts] = useState<AllWorkouts[]>([])
     const navigate = useNavigate()
     const [loading, setLoading] = useState(true);
+    const [message,setMessage] = useState("Loading workout information")
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,7 +17,8 @@ export const WorkoutList = () => {
                 setWorkouts(data.reverse())
                 setLoading(false);
             }catch (err){
-                console.error(err)
+                console.error(err);
+                setMessage(String(err))
             }
         }
         fetchData()
@@ -24,7 +26,7 @@ export const WorkoutList = () => {
 
     
      return  (<div>
-        {loading ? <div className="adding-message">Loading Workout Information </div>: 
+        {loading ? <div className="adding-message">{message} </div>: 
         <div className="workout-list-wrapper">
      <div className="workout-list">
         <ul className="workout-list">
