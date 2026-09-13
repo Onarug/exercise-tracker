@@ -26,3 +26,6 @@ dist-ssr
 # Env file
 server/.env
 .env
+
+#wranger
+.wrangler/
